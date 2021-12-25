@@ -59,7 +59,7 @@ export const getCourses = async (req, res, next) => {
     } 
 };
 
-//Update
+//Update Course
 export const updateCourse = async (req, res, next) => {
     try {
         const result = await model.findByIdAndUpdate(req.params.id, req.body, {
@@ -82,7 +82,7 @@ export const updateCourse = async (req, res, next) => {
     }
 };
 
-//Delete
+//Delete Course
 export const deleteCourse = async (req, res, next) => {
     try {
         await CourseModel.findByIdAndDelete(req.params.id);
