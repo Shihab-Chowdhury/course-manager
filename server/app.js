@@ -2,9 +2,16 @@
 import express from "express";
 import mongoose from "mongoose";
 import { appconfig, dbconfig } from './src/config/config.js';
+import { corsMiddleware } from "./src/middlewares/cors.js";
 import { routes } from "./src/routes/route-index.js";
 
 export const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+// app.use('/api/course', courseRoutes)
+
+app.use(corsMiddleware);
 
 routes(app);
 

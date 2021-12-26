@@ -2,25 +2,25 @@ POST http://localhost:3000/api/course/create
 Content-Type: application/json
 
 {
-    "name": "Basic Programming Language",
-    "code": "CSE110",
+    "name": "Discrete Mathematics",
+    "code": "CSE230",
     "department": "Computer Science",
-    "faculty": "Elon Musk"
+    "faculty": "Jeff Bezos"
 }
 
 ###
 GET http://localhost:3000/api/course/search
 
 ###
-PUT http://localhost:3000/api/course/update/
+PUT http://localhost:3000/api/course/update/61c80e08012cfa5fdbed01ae
 Content-Type: application/json
 
 {
     "name": "Basic Programming Language",
-    "code": "CSE110",
+    "code": "CSE105",
     "department": "Computer Science",
     "faculty": "Elon Musk"
 }
 
 ###
-DELETE http://localhost:3000/api/course/delete/
+DELETE http://localhost:3000/api/course/delete/61c80e08012cfa5fdbed01ae
