@@ -2,12 +2,12 @@ POST http://localhost:3000/api/student/create
 Content-Type: application/json
 
 {
-    "name": "Tanvir",
-    "dob": "1997-07-11",
-    "gender": "Male",
-    "phone": "05433445666",
+    "name": "Sanjana",
+    "dob": "1996-07-11",
+    "gender": "Female",
+    "phone": "01433445666",
     "department": "CSE",
-    "courses": ["CSE110","CSE220"]
+    "courses": ["61c995d18d32830c7a294be8"]
 }
 
 ###
@@ -27,21 +27,23 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/api/student/search/61c94b94e0f4e1363a923ba6
+GET http://localhost:3000/api/student/search/61c9961e8d32830c7a294bec
 
 ###
 GET http://localhost:3000/api/student/search
 
-# ###
-# PUT http://localhost:3000/api/course/update/61c80e08012cfa5fdbed01ae
-# Content-Type: application/json
+###
+PUT http://localhost:3000/api/student/update/61c9961e8d32830c7a294bec
+Content-Type: application/json
 
-# {
-#     "name": "Basic Programming Language",
-#     "code": "CSE105",
-#     "department": "Computer Science",
-#     "faculty": "Elon Musk"
-# }
+{
+    "name": "Sanjana",
+    "dob": "1996-07-11",
+    "gender": "Female",
+    "phone": "01433445666",
+    "department": "CSE",
+    "courses": ["61c995d18d32830c7a294be8"]
+}
 
-# ###
-# DELETE http://localhost:3000/api/course/delete/61c80e08012cfa5fdbed01ae
+###
+DELETE http://localhost:3000/api/student/delete/61c9961e8d32830c7a294bec

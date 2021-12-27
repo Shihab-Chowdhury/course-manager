@@ -43,7 +43,8 @@ export const createStudent = async (req, res, next) => {
 export const getOneStudent = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const result  = await model.findById(id);
+        const result  = await model.findById(id)
+        .populate('courses', 'name code department faculty');
         res.status(200).json({
             message: "Displaying Results.",
             result: result
@@ -150,7 +151,7 @@ export const removeCourse = async (req, res, next) => {
 }
 
 // Update student details
-export const updateCourse = async (req, res, next) => {
+export const updateStudent = async (req, res, next) => {
     try {
         const result = await model.findByIdAndUpdate(req.params.id, req.body, {
             runValidators: true,
@@ -173,7 +174,7 @@ export const updateCourse = async (req, res, next) => {
 };
 
 // Delete student
-export const deleteCourse = async (req, res, next) => {
+export const deleteStudent = async (req, res, next) => {
     try {
         await model.findByIdAndDelete(req.params.id);
         res.status(200).json({

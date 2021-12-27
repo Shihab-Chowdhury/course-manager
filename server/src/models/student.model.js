@@ -33,7 +33,7 @@ const StudentSchema = mongoose.Schema({
     gender: reqString,
     phone: reqPhoneNumber,
     department: opString,
-    courses: [opString]
+    courses: [{type: mongoose.Types.ObjectId, ref: 'Course', required:true}]
     
 }, {timestamps:true});
 

@@ -2,10 +2,10 @@ POST http://localhost:3000/api/course/create
 Content-Type: application/json
 
 {
-    "name": "Discrete Mathematics",
-    "code": "CSE230",
+    "name": "Basic Programming Language",
+    "code": "CSE110",
     "department": "Computer Science",
-    "faculty": "Jeff Bezos"
+    "faculty": "Martin Luther King"
 }
 
 ###

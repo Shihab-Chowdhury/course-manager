@@ -3,7 +3,9 @@ import { addCourse,
          removeCourse, 
          createStudent,
          getOneStudent, 
-         getStudents
+         getStudents,
+         updateStudent,
+         deleteStudent
          
     } from '../controllers/student.controller.js';
 
@@ -29,16 +31,12 @@ router.get('/search/:id', getOneStudent)
 // search students
 router.get('/search', getStudents)
 
-// // GET: api/student/search
-// // search student
-// router.get('/search', getStudents)
+// PUT: api/student/update
+// update student
+router.put('/update/:id', updateStudent) 
 
-// // PUT: api/student/update
-// // update student
-// router.put('/update/:id', updateStudent) 
-
-// // DELETE: api/student/delete
-// // delete student
-// router.delete('/delete/:id', deleteStudent)
+// DELETE: api/student/delete
+// delete student
+router.delete('/delete/:id', deleteStudent)
 
 export default router;
