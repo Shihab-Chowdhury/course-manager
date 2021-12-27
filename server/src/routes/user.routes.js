@@ -4,21 +4,21 @@ import { deleteUser,
          getUserWithID,
          listUserByDate,
          signup,
-         updateUser,
+        //  updateUser,
          login,
-        } from '../controllers/users.controller.js';  
+        } from '../controllers/user.controller.js';  
 // import { checkAuth } from '../middlewares/check-auth.js';
-import { loginValidator, userValidator, validate } from '../middlewares/validator.js';
+// import { loginValidator, userValidator, validate } from '../middlewares/validator.js';
 
 const router = express.Router();
 
 // POST: api/users/signup
 // user signup 
-router.post('/signup', userValidator, validate, signup);
+router.post('/signup',  signup);
 
 // POST: api/users/login
 // user login
-router.post('/login', loginValidator, validate, login);
+router.post('/login',  login);
 
 // GET: api/users/search
 // view all the users  
@@ -32,9 +32,9 @@ router.get('/search/:id', getUserWithID);
 // view all the billings specific to a date range
 router.get('/list-by-date/:id', listUserByDate);
 
-// PUT: api/users/update
-// update user
-router.put('/update/:id', updateUser) 
+// // PUT: api/users/update
+// // update user
+// router.put('/update/:id', updateUser) 
 
 // DELETE: api/users/delete
 // delete user

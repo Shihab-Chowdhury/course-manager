@@ -1,5 +1,4 @@
 import { UserModel } from '../models/user.model.js';
-import { update } from '../services/generic.services.js';
 import { createUser, loginUser } from '../services/auth.services.js';
 
 const model = UserModel;
@@ -137,23 +136,23 @@ export const listUserByDate = async (req,res,next) => {
     } 
 }
 
-//Update
-export const updateUser = async (req, res, next) => {
-    try {        
-        const result = await update(req, res, model);
-        res.status(200).json({
-            message: "User Updated.",
-            result: result
-        });
-        next();
-    } catch (error) {
-        res.json({
-            message : "Something Went Wrong!!",
-            error: error.message
-        });
-        next(error);
-    }
-};
+// //Update
+// export const updateUser = async (req, res, next) => {
+//     try {        
+//         const result = await update(req, res, model);
+//         res.status(200).json({
+//             message: "User Updated.",
+//             result: result
+//         });
+//         next();
+//     } catch (error) {
+//         res.json({
+//             message : "Something Went Wrong!!",
+//             error: error.message
+//         });
+//         next(error);
+//     }
+// };
 
 //Delete
 export const deleteUser = async (req, res, next) => {

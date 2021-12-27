@@ -1,0 +1,48 @@
+POST http://localhost:3000/api/user/signup
+Content-Type: application/json
+
+{
+    "name":"Mingo",
+    "email":"Mingo@strawhat.com",
+    "password":"Qpass@1343424242",
+    "dob":"2021-09-21",
+    "phone":"01844723145",
+    "gender":"Male",
+    "address":"GrandLine, Dressrossa"
+}
+
+###
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+    "email":"denis@rtex.com",
+    "password":"Denis@600"    
+}
+
+###
+PATCH http://localhost:3000/api/user/change-password
+Content-Type: application/json
+
+{
+    "email":"denis@rtex.com",
+    "password":"Denis@600"    
+} 
+
+###
+GET http://localhost:3000/api/user/search
+
+###
+GET http://localhost:3000/api/user/search/613078180ba86d0cfa4a57bb
+
+###
+PUT http://localhost:3000/api/user/update/612b2989a09752a81b157751
+Content-Type: application/json
+
+{
+    "name":"Luffy",
+    "email":"luffy01@onep.com"
+}
+
+###
+DELETE http://localhost:3000/api/user/delete/61331db67c950d51e725bf99
