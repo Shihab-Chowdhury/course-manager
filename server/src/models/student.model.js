@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { CourseSchema } from "./course.model.js";
 
 // rules defined for attributes
 const reqString = {

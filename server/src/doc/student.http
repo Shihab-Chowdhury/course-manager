@@ -1,0 +1,54 @@
+POST http://localhost:3000/api/student/create
+Content-Type: application/json
+
+{
+    "name": "Tanvir",
+    "dob": "1997-07-11",
+    "gender": "Male",
+    "phone": "05433445666",
+    "department": "CSE",
+    "courses": ["CSE110","CSE220"]
+}
+
+###
+PATCH http://localhost:3000/api/student/addCourses/61c94b94e0f4e1363a923ba6
+Content-Type: application/json
+
+{
+    "courses": ["CSE210"]
+}
+
+###
+PATCH http://localhost:3000/api/student/removeCourse/61c94b94e0f4e1363a923ba6
+Content-Type: application/json
+
+{
+    "courses": ["CSE290"]
+}
+
+# POST http://localhost:3000/api/course/create
+# Content-Type: application/json
+
+# {
+#     "name": "Discrete Mathematics",
+#     "code": "CSE230",
+#     "department": "Computer Science",
+#     "faculty": "Jeff Bezos"
+# }
+
+# ###
+# GET http://localhost:3000/api/course/search
+
+# ###
+# PUT http://localhost:3000/api/course/update/61c80e08012cfa5fdbed01ae
+# Content-Type: application/json
+
+# {
+#     "name": "Basic Programming Language",
+#     "code": "CSE105",
+#     "department": "Computer Science",
+#     "faculty": "Elon Musk"
+# }
+
+# ###
+# DELETE http://localhost:3000/api/course/delete/61c80e08012cfa5fdbed01ae

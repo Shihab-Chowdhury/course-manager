@@ -5,7 +5,6 @@ let model = CourseModel;
 //Create Course
 export const createCourse = async (req, res, next) => {
     try {
-        console.log(req.body);
         let {name} = req.body;
         name = name.trim();
         const checkDuplicate = await model.exists({
