@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import { appconfig, dbconfig } from './src/config/config.js';
 import { corsMiddleware } from "./src/middlewares/cors.js";
 import { routes } from "./src/routes/route-index.js";
+import { seedCourses } from "./src/seed/course.seed.js";
 
 export const app = express();
 
@@ -34,12 +35,15 @@ const connectWithRetry = () => {
             useUnifiedTopology:true,
         }).then(()=> console.log(`${new Date().toISOString()} [info] Connected to DB @ ${mongoURL}`))
         .catch((e) => {
+            
+            console.log(e);
+            setTimeout(connectWithRetry,5000);
+            
+        });
+    };
         
-        console.log(e);
-        setTimeout(connectWithRetry,5000);
-    
-    });
-};
+    seedCourses();
+
 
 //express app listener
 const startApp = () =>{
