@@ -23,21 +23,14 @@ PATCH http://localhost:3000/api/student/removeCourse/61c94b94e0f4e1363a923ba6
 Content-Type: application/json
 
 {
-    "courses": ["CSE290"]
+    "courses": ["CSE270"]
 }
 
-# POST http://localhost:3000/api/course/create
-# Content-Type: application/json
+###
+GET http://localhost:3000/api/student/search/61c94b94e0f4e1363a923ba6
 
-# {
-#     "name": "Discrete Mathematics",
-#     "code": "CSE230",
-#     "department": "Computer Science",
-#     "faculty": "Jeff Bezos"
-# }
-
-# ###
-# GET http://localhost:3000/api/course/search
+###
+GET http://localhost:3000/api/student/search
 
 # ###
 # PUT http://localhost:3000/api/course/update/61c80e08012cfa5fdbed01ae

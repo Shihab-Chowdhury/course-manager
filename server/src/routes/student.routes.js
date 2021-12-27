@@ -2,7 +2,8 @@ import express from 'express';
 import { addCourse,
          removeCourse, 
          createStudent,
-         getOneStudent 
+         getOneStudent, 
+         getStudents
          
     } from '../controllers/student.controller.js';
 
@@ -20,9 +21,13 @@ router.patch('/addCourses/:id', addCourse)
 // remove course
 router.patch('/removeCourse/:id', removeCourse)
 
-// GET: api/student/search
-// search student
+// GET: api/student/search/:id
+// search one student
 router.get('/search/:id', getOneStudent)
+
+// GET: api/student/search
+// search students
+router.get('/search', getStudents)
 
 // // GET: api/student/search
 // // search student

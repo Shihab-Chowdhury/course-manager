@@ -135,7 +135,7 @@ export const removeCourse = async (req, res, next) => {
 
         res.status(201).json({
             message:"Course Removed.",
-            result: removeCourse
+            result: removeCourse.courses
         });
         next();
     } catch (error) {
@@ -150,10 +150,47 @@ export const removeCourse = async (req, res, next) => {
 }
 
 // Update student details
-
+export const updateCourse = async (req, res, next) => {
+    try {
+        const result = await model.findByIdAndUpdate(req.params.id, req.body, {
+            runValidators: true,
+            new: true
+        });
+        res.status(200).json({
+            message: "Student Updated.",
+            status: "success",
+            result: result
+        });
+        next();
+    } catch (error) {
+        res.json({
+            message : "Something Went Wrong!!",
+            status: "failed",
+            error: error.message
+        });
+        next(error);
+    }
+};
 
 // Delete student
+export const deleteCourse = async (req, res, next) => {
+    try {
+        await model.findByIdAndDelete(req.params.id);
+        res.status(200).json({
+            message: "Student Deleted",
+            status:"success"
+        })
+        next();
 
+    } catch (error) {
+        res.json({
+           message : "Something Went Wrong!!",
+           status:"failed",
+           error: error.message
+        });
+        next(error);
+    }  
+};
 
 
 
