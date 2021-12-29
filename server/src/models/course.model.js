@@ -15,6 +15,7 @@ const opString = {
 
 const CourseSchema = mongoose.Schema({
 
+    _id: reqString,
     name: reqString,
     code: reqString,
     department: reqString,

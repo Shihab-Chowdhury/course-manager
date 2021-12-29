@@ -2,6 +2,7 @@ POST http://localhost:3000/api/course/create
 Content-Type: application/json
 
 {
+    "_id": 1,
     "name": "Basic Programming Language",
     "code": "CSE110",
     "department": "Computer Science",

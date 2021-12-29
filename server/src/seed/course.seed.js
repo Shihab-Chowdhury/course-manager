@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import { CourseModel } from "../models/course.model.js";
 
 export const seedCourses = () => {
@@ -27,7 +26,7 @@ export const seedCourses = () => {
     ];
 
     const seedDB = async () => {
-        await CourseModel.deleteMany({});
+        // await CourseModel.deleteMany({});
         await CourseModel.insertMany(courses);
     };
 
