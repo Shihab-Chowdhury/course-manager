@@ -7,7 +7,7 @@ Content-Type: application/json
     "gender": "Female",
     "phone": "01433445666",
     "department": "CSE",
-    "courses": ["61c995d18d32830c7a294be8"]
+    "courses": ["C001"]
 }
 
 ###

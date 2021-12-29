@@ -2,23 +2,21 @@ POST http://localhost:3000/api/course/create
 Content-Type: application/json
 
 {
-    "_id": "C001",
-    "name": "Basic Programming Language",
-    "code": "CSE110",
+    "name": "Discrete Mathematics",
+    "code": "CSE220",
     "department": "Computer Science",
-    "faculty": "Martin Luther King"
+    "faculty": "Martin Szoboslai"
 }
 
 ###
 GET http://localhost:3000/api/course/search
 
 ###
-PUT http://localhost:3000/api/course/update/61c80e08012cfa5fdbed01ae
+PUT http://localhost:3000/api/course/update/C001
 Content-Type: application/json
 
 {
-    "_id": "C001",
-    "name": "Basic Programming Language",
+    "name": "Basic",
     "code": "CSE110",
     "department": "Computer Science",
     "faculty": "Martin Luther King"
