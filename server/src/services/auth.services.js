@@ -33,13 +33,16 @@ export const loginUser = async (req, res, model) => {
     // console.log(user);
     if (!user){
         res.status(401);
-        throw new Error ("Authentication Failed.")
+        throw new Error ("Authentication Failed.");
     };
     const result = bcrypt.compareSync(req.body.password, user.password); // true
     const token = jwt.sign({
+        
         iat: moment().unix(),
         sub: user._id,
+        role_id: user.role,
         exp: moment().add(6, "hours").unix(),
+
     }, jwt_key);
     if (!result) {
         res.status(401);
@@ -48,4 +51,34 @@ export const loginUser = async (req, res, model) => {
     return {user: user, token: token};
 }
 
+export const updatePassword = async (req, res, model) => {
+    let { newPassword, oldPassword, email } = req.body;
+    const result = await model.findOne({ email });
+    
+    if (!bcrypt.compareSync(oldPassword, result.password)) {
+        res.status(400);
+        throw new Error("Invalid Password");
+    }
 
+    
+    if (bcrypt.compareSync(newPassword, result.password)) {
+        res.status(409);
+        throw new Error('Password Must Be Different');
+    }
+    
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(newPassword, salt);
+    newPassword = hash;
+    
+    if (result){
+        const updateResult = await model.findByIdAndUpdate(
+            result.id, 
+            {password:newPassword}, {
+            runValidators: true,
+            new: true
+        });
+        return updateResult;
+    }
+    res.status(404);
+    throw new Error("User does not exist");       
+}

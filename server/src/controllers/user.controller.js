@@ -1,19 +1,22 @@
 import { UserModel } from '../models/user.model.js';
-import { createUser, loginUser } from '../services/auth.services.js';
+import { update } from '../services/generic.services.js';
+import { createUser, loginUser, updatePassword } from '../services/auth.services.js';
 
 const model = UserModel;
 
 //User Signup
 export const signup = async (req, res, next) => {
     try {
-        const result = await createUser(req, res, model); 
+        const result = await createUser(req, res, model);
         res.status(201).json({
             message: 'User Created.',
+            status:'success',
             result: result
         })       
     } catch (error) {
         res.json({
             message: "Something Went Wrong!!",
+            status:'failed',
             error: error.message
         });
         next(error);
@@ -27,12 +30,14 @@ export const login = async (req, res, next) => {
         const {user, token} = await loginUser(req, res, model); 
         res.status(200).json({ 
             message: 'Authentication Successful.',
+            status:'success',
             token: token,
             result: user.email  
         })   
     } catch (error) {
         res.json({
             message: "Something Went Wrong!!",
+            status:'failed',
             error: error.message
         });
         next(error);        
@@ -47,16 +52,28 @@ export const getUsers = async (req,res, next) => {
         *pagination based on query
         *select can be used to display specific data
         */
+        let query = {};
         const { page = 1, limit = 10 } = req.query;
-        const user = await UserModel.find()
-            .limit(limit * 1)
-            .skip((page - 1) * limit)                       //(page-1) isn't required if page value starts from 0  
-            .sort({_id: 'desc'})                            //Sorting in descending order by objectId (desc, asc)
-            //.select('startDate');                          
+        
+        if (Object.keys(req.query).length > 0) {
+            const {q} = req.query;
+              
+            query = {
+                $or: [
+                    {name: {$regex: q+"", $options: "$i"}},
+                    {phone: {$regex: q+"", $options: "$i"}}
+                ]
+            };
+        }   
+        const user =  await UserModel.find(query)
+        .limit(limit * 1)
+        .skip((page -1) * limit)
+        .sort({_id: 'desc'});                          
         
         res.status(200).json({
             total: user.length,
             message:'Displaying Results',
+            status:'success',
             result: user
         });
         
@@ -66,6 +83,7 @@ export const getUsers = async (req,res, next) => {
         if (res.statusCode == '200') res.status(400);
         res.json({
             message: 'Something Went Wrong!!',
+            status:'failed',
             error: error.message
         });
 
@@ -77,19 +95,24 @@ export const getUsers = async (req,res, next) => {
 export const getUserWithID = async (req,res,next) => {
     try {                     
         const userList = await UserModel.findById(req.params.id).sort({createdAt: 'desc'});              
-        
+        if(!userList) {
+            res.status(404);
+            throw new Error("User Not Found!!")
+        }
         res.status(200).json({
             total: userList.length,
             message:'Displaying Result.',
+            status:'success',
             result: userList
         });
         
         next();
 
     } catch (error) {
-        if (res.statusCode == '200') res.status(400);
+        
         res.json({
             message: 'Something Went Wrong!!',
+            status:'failed',
             error: error
         });
 
@@ -120,6 +143,7 @@ export const listUserByDate = async (req,res,next) => {
 
         res.status(200).json({
             message:'Displaying Results.',
+            status:'success',
             result: list
         });
 
@@ -129,6 +153,7 @@ export const listUserByDate = async (req,res,next) => {
         if(res.statusCode == '200') res.status(400);
         res.json({
             message:'Something Went Wrong!!',
+            status:'failed',
             error: error.message
         });
 
@@ -136,23 +161,45 @@ export const listUserByDate = async (req,res,next) => {
     } 
 }
 
-// //Update
-// export const updateUser = async (req, res, next) => {
-//     try {        
-//         const result = await update(req, res, model);
-//         res.status(200).json({
-//             message: "User Updated.",
-//             result: result
-//         });
-//         next();
-//     } catch (error) {
-//         res.json({
-//             message : "Something Went Wrong!!",
-//             error: error.message
-//         });
-//         next(error);
-//     }
-// };
+//Update
+export const updateUser = async (req, res, next) => {
+    try {        
+        const result = await update(req, res, model);
+        res.status(200).json({
+            message: "User Updated.",
+            status:'success',
+            result: result
+        });
+        next();
+    } catch (error) {
+        res.json({
+            message : "Something Went Wrong!!",
+            status:'failed',
+            error: error.message
+        });
+        next(error);
+    }
+};
+
+//Chenge Password
+export const changePassword = async (req, res, next) => {
+    try {        
+        const result = await updatePassword(req, res, model);
+        res.status(200).json({
+            message: "Password Updated.",
+            status:'success',
+            result: result
+        });
+        next();
+    } catch (error) {
+        res.json({
+            message : "Something Went Wrong!!",
+            status:'failed',
+            error: error.message
+        });
+        next(error);
+    }
+};
 
 //Delete
 export const deleteUser = async (req, res, next) => {
@@ -160,6 +207,7 @@ export const deleteUser = async (req, res, next) => {
         const user = await model.findByIdAndDelete(req.params.id);
         res.status(200).json({
             result: user,
+            status:'success',
             message: "User Deleted"
         })
         next();
@@ -167,6 +215,7 @@ export const deleteUser = async (req, res, next) => {
     } catch (error) {
         res.json({
            message : "Something Went Wrong!!",
+           status:'failed',
            error: error.message
         });
         next(error);

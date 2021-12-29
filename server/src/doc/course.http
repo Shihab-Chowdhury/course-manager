@@ -2,7 +2,7 @@ POST http://localhost:3000/api/course/create
 Content-Type: application/json
 
 {
-    "_id": 1,
+    "_id": "C001",
     "name": "Basic Programming Language",
     "code": "CSE110",
     "department": "Computer Science",
@@ -17,11 +17,12 @@ PUT http://localhost:3000/api/course/update/61c80e08012cfa5fdbed01ae
 Content-Type: application/json
 
 {
+    "_id": "C001",
     "name": "Basic Programming Language",
-    "code": "CSE105",
+    "code": "CSE110",
     "department": "Computer Science",
-    "faculty": "Elon Musk"
+    "faculty": "Martin Luther King"
 }
 
 ###
-DELETE http://localhost:3000/api/course/delete/61c80e08012cfa5fdbed01ae
+DELETE http://localhost:3000/api/course/delete/C001

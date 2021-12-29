@@ -2,9 +2,9 @@ POST http://localhost:3000/api/user/signup
 Content-Type: application/json
 
 {
-    "name":"Mingo",
-    "email":"Mingo@strawhat.com",
-    "password":"Qpass@1343424242",
+    "name":"luffy",
+    "email":"luffy@strawhat.com",
+    "password":"Admin@123",
     "dob":"2021-09-21",
     "phone":"01844723145",
     "gender":"Male",
@@ -16,33 +16,38 @@ POST http://localhost:3000/api/user/login
 Content-Type: application/json
 
 {
-    "email":"denis@rtex.com",
-    "password":"Denis@600"    
+    "email":"luffy@strawhat.com",
+    "password":"Admin@123"    
 }
 
 ###
-PATCH http://localhost:3000/api/user/change-password
+PATCH http://localhost:3000/api/user/update-password/61cc2b58a3d4399d804bc834
 Content-Type: application/json
 
 {
-    "email":"denis@rtex.com",
-    "password":"Denis@600"    
+    "email":"luffy@strawhat.com",
+    "password":"Admin@123"    
 } 
 
 ###
 GET http://localhost:3000/api/user/search
 
 ###
-GET http://localhost:3000/api/user/search/613078180ba86d0cfa4a57bb
+GET http://localhost:3000/api/user/search/61cc2b58a3d4399d804bc834
 
 ###
 PUT http://localhost:3000/api/user/update/612b2989a09752a81b157751
 Content-Type: application/json
 
 {
-    "name":"Luffy",
-    "email":"luffy01@onep.com"
+    "name":"luffy",
+    "email":"luffy@strawhat.com",
+    "password":"Admin@123",
+    "dob":"2021-09-21",
+    "phone":"01844723145",
+    "gender":"Male",
+    "address":"GrandLine, Dressrossa"
 }
 
 ###
-DELETE http://localhost:3000/api/user/delete/61331db67c950d51e725bf99
+DELETE http://localhost:3000/api/user/delete/612b2989a09752a81b157751

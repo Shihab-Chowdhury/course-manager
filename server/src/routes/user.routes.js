@@ -4,21 +4,23 @@ import { deleteUser,
          getUserWithID,
          listUserByDate,
          signup,
-        //  updateUser,
+         updateUser,
          login,
+         changePassword,
         } from '../controllers/user.controller.js';  
-// import { checkAuth } from '../middlewares/check-auth.js';
-// import { loginValidator, userValidator, validate } from '../middlewares/validator.js';
+import { checkAuth } from '../middlewares/check-auth.js';
+import { loginValidator, userValidator, validate } from '../middlewares/validator.js';
+import { updatePassValidator } from '../middlewares/validators/user.validator.js';
 
 const router = express.Router();
 
 // POST: api/users/signup
 // user signup 
-router.post('/signup',  signup);
+router.post('/signup', userValidator, validate, signup);
 
 // POST: api/users/login
 // user login
-router.post('/login',  login);
+router.post('/login', loginValidator, validate, login);
 
 // GET: api/users/search
 // view all the users  
@@ -32,12 +34,17 @@ router.get('/search/:id', getUserWithID);
 // view all the billings specific to a date range
 router.get('/list-by-date/:id', listUserByDate);
 
-// // PUT: api/users/update
-// // update user
-// router.put('/update/:id', updateUser) 
+// PUT: api/users/update
+// update user
+router.put('/update/:id', updateUser) 
+
+// PACTCH: api/users/update-password/:id
+// update password
+router.patch('/update-password/:id', updatePassValidator, changePassword) 
 
 // DELETE: api/users/delete
 // delete user
 router.delete('/delete/:id', deleteUser)
 
 export default router;
+
