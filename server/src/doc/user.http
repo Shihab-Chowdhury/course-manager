@@ -20,34 +20,34 @@ Content-Type: application/json
     "password":"Admin@123"    
 }
 
-###
-PATCH http://localhost:3000/api/user/update-password/61cc2b58a3d4399d804bc834
-Content-Type: application/json
+# ###
+# PATCH http://localhost:3000/api/user/update-password/61cc2b58a3d4399d804bc834
+# Content-Type: application/json
 
-{
-    "email":"luffy@strawhat.com",
-    "password":"Admin@123"    
-} 
+# {
+#     "email":"luffy@strawhat.com",
+#     "password":"Admin@123"    
+# } 
 
-###
-GET http://localhost:3000/api/user/search
+# ###
+# GET http://localhost:3000/api/user/search
 
-###
-GET http://localhost:3000/api/user/search/61cc2b58a3d4399d804bc834
+# ###
+# GET http://localhost:3000/api/user/search/61cc2b58a3d4399d804bc834
 
-###
-PUT http://localhost:3000/api/user/update/612b2989a09752a81b157751
-Content-Type: application/json
+# ###
+# PUT http://localhost:3000/api/user/update/612b2989a09752a81b157751
+# Content-Type: application/json
 
-{
-    "name":"luffy",
-    "email":"luffy@strawhat.com",
-    "password":"Admin@123",
-    "dob":"2021-09-21",
-    "phone":"01844723145",
-    "gender":"Male",
-    "address":"GrandLine, Dressrossa"
-}
+# {
+#     "name":"luffy",
+#     "email":"luffy@strawhat.com",
+#     "password":"Admin@123",
+#     "dob":"2021-09-21",
+#     "phone":"01844723145",
+#     "gender":"Male",
+#     "address":"GrandLine, Dressrossa"
+# }
 
-###
-DELETE http://localhost:3000/api/user/delete/612b2989a09752a81b157751
+# ###
+# DELETE http://localhost:3000/api/user/delete/612b2989a09752a81b157751

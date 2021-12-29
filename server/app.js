@@ -40,19 +40,20 @@ const connectWithRetry = () => {
             setTimeout(connectWithRetry,5000);
             
         });
-    };
         
+    };   
+    
+    // Seed Database
     seedCourses();
-
-
-//express app listener
-const startApp = () =>{
-    connectWithRetry();
-    const {app_port, app_host_ip} = appconfig
-    app.listen(
-        app_port,
-        ()=> console.log(`${new Date().toISOString()} [info] Running On Port ${app_host_ip}`)
-    );
-};
-
-startApp();
+    
+    //express app listener
+    const startApp = () =>{
+        connectWithRetry();
+        const {app_port, app_host_ip} = appconfig
+        app.listen(
+            app_port,
+            ()=> console.log(`${new Date().toISOString()} [info] Running On Port ${app_host_ip}`)
+            );
+        };
+        
+        startApp();
