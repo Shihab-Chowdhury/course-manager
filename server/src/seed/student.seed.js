@@ -2,7 +2,7 @@ import { StudentModel } from "../models/student.model.js";
 
 export const seedtudents = () => {
     
-    const courses = [
+    const students = [
         new StudentModel({
             name: "John Musk",
             dob: "1990-03-01",
@@ -331,7 +331,7 @@ export const seedtudents = () => {
 
     const seedStudentDB = async () => {
         await StudentModel.deleteMany({});
-        await StudentModel.insertMany(courses);
+        await StudentModel.insertMany(students);
     };
 
     seedStudentDB();

@@ -123,6 +123,7 @@ export const removeCourse = async (req, res, next) => {
         let { courses } = req.body;
         const { id } = req.params;
         let oneCourse = courses[0];
+        console.log(oneCourse);
         const removeCourse = await model.findByIdAndUpdate(
             id, 
             {

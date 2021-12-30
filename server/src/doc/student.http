@@ -21,27 +21,42 @@ Content-Type: application/json
          "faculty": "Martin Luther King"
          }
          
-        ]
+    ]
 }
 
 ###
-PATCH http://localhost:3000/api/student/addCourses/61c94b94e0f4e1363a923ba6
+PATCH http://localhost:3000/api/student/addCourses/61cd5d452699aec9985669c8
 Content-Type: application/json
 
 {
-    "courses": ["CSE210"]
+    "courses": [
+
+        {
+         "name": "Basic Programming Language",
+         "code": "CSE110",
+         "department": "Computer Science and Engineering",
+         "faculty": "Elon Musk"
+        }
+    
+    ]
 }
 
 ###
-PATCH http://localhost:3000/api/student/removeCourse/61c94b94e0f4e1363a923ba6
+PATCH http://localhost:3000/api/student/removeCourse/61cd5d452699aec9985669c8
 Content-Type: application/json
 
 {
-    "courses": ["CSE270"]
+     "courses": [
+
+        {
+         "name": "Basic Programming Language"
+        }
+    
+    ]
 }
 
 ###
-GET http://localhost:3000/api/student/search/61cd42b78b24664a464d3147
+GET http://localhost:3000/api/student/search/61cd5d452699aec9985669c8
 
 ###
 GET http://localhost:3000/api/student/search
