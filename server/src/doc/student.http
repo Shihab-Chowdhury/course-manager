@@ -7,7 +7,21 @@ Content-Type: application/json
     "gender": "Female",
     "phone": "01433445666",
     "department": "CSE",
-    "courses": ["C001"]
+    "courses": [
+
+        {"name": "Analytic and Vector Geometry",
+         "code": "MAT122",
+         "department": "Mathematics and Natural Sciences",
+         "faculty": "Khosh Mohammad"
+        },
+
+        {"name": "Basic",
+         "code": "CSE110",
+         "department": "Computer Science",
+         "faculty": "Martin Luther King"
+         }
+         
+        ]
 }
 
 ###
@@ -27,7 +41,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/api/student/search/61c9961e8d32830c7a294bec
+GET http://localhost:3000/api/student/search/61cd42b78b24664a464d3147
 
 ###
 GET http://localhost:3000/api/student/search
@@ -46,4 +60,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/api/student/delete/61c9961e8d32830c7a294bec
+DELETE http://localhost:3000/api/student/delete/61cd42b78b24664a464d3147

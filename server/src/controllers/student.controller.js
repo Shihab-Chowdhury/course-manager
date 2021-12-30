@@ -44,7 +44,7 @@ export const getOneStudent = async (req, res, next) => {
     try {
         const { id } = req.params;
         const result  = await model.findById(id)
-        .populate('courses', 'name code department faculty');
+        // .populate({path: 'copies.courses', select: 'name code department faculty'});
         res.status(200).json({
             message: "Displaying Results.",
             result: result
@@ -63,7 +63,7 @@ export const getStudents = async (req, res, next) => {
     try {                      
         const { page = 1, limit = 10 } = req.query;
         const result = await model.find()
-            .populate('course', 'name code department faculty')
+            // .populate({path: 'copies.courses', select: 'name code department faculty'})
             .limit(limit * 1)
             .skip((page - 1) * limit)                       //(page-1) isn't required if page value starts from 0  
             .sort({_id: 'desc'});                           //Sorting in descending order by objectId (desc, asc)

@@ -5,6 +5,7 @@ import { appconfig, dbconfig } from './src/config/config.js';
 import { corsMiddleware } from "./src/middlewares/cors.js";
 import { routes } from "./src/routes/route-index.js";
 import { seedCourses } from "./src/seed/course.seed.js";
+import { seedtudents } from "./src/seed/student.seed.js";
 
 export const app = express();
 
@@ -45,6 +46,7 @@ const connectWithRetry = () => {
     
     // Seed Database
     seedCourses();
+    seedtudents();
     
     //express app listener
     const startApp = () =>{

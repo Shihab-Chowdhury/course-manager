@@ -26,6 +26,15 @@ const reqPhoneNumber = {
     maxlength: 14
 };
 
+const CourseSchema = mongoose.Schema({
+
+    name: reqString,
+    code: reqString,
+    department: reqString,
+    faculty: opString
+    
+}, {timestamps:true});
+
 const StudentSchema = mongoose.Schema({
 
     name: reqString,
@@ -33,7 +42,7 @@ const StudentSchema = mongoose.Schema({
     gender: reqString,
     phone: reqPhoneNumber,
     department: opString,
-    courses: [{type: mongoose.Types.ObjectId, ref: 'Course', required:true}]
+    courses: [CourseSchema]
     
 }, {timestamps:true});
 

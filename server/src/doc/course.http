@@ -2,10 +2,10 @@ POST http://localhost:3000/api/course/create
 Content-Type: application/json
 
 {
-    "name": "Discrete Mathematics",
-    "code": "CSE220",
-    "department": "Computer Science",
-    "faculty": "Martin Szoboslai"
+    "name": "Analytic and Vector Geometry",
+    "code": "MAT122",
+    "department": "Mathematics and Natural Sciences",
+    "faculty": "Khosh Mohammad"
 }
 
 ###
