@@ -61,6 +61,7 @@ export const getOneStudent = async (req, res, next) => {
 // Return the list of students, optionally with pagination
 export const getStudents = async (req, res, next) => {
     try {                      
+        const pagesCount = await model.countDocuments();
         const { page = 1, limit = 10 } = req.query;
         const result = await model.find()
             // .populate({path: 'copies.courses', select: 'name code department faculty'})
@@ -69,6 +70,7 @@ export const getStudents = async (req, res, next) => {
             .sort({_id: 'desc'});                           //Sorting in descending order by objectId (desc, asc)
         res.status(200).json({
             total: result.length,
+            totalDocuments: pagesCount,
             message:'Displaying Results.',
             result: result
         });        
