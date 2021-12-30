@@ -38,12 +38,7 @@
                                 </td>
                                 <td class="py-3 md:px-6 px-0.5 hidden lg:table-cell text-center ">
                                     <span>{{stu.phone}}</span>                               
-                                </td>
-                                <!-- <td class="py-3 md:px-6 px-0.5 hidden md:table-cell text-center ">
-                                    <div class="flex item-center justify-center">
-                                        <span class="font-medium">{{stu.advisor}}</span>
-                                    </div>
-                                </td> -->
+                                </td>                                
                             </tr>
                            
                         </tbody>
