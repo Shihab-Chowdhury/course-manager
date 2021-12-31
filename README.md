@@ -3,7 +3,7 @@ An application for an Admin in a University to manually choose courses for stude
 
 *There are 4 branch ( main, dev, test and docker)*
 
-To run from the main branch follow the following steps:
+To run the application (main branch) please use the following commands:
 
 1. >docker build -t "vue-app" ./client/
 
@@ -11,7 +11,7 @@ To run from the main branch follow the following steps:
 
 3. >docker-compose up
 
-For testing purpose you have to use the testing branch and the run the following commands:
+For testing purpose you have to use the testing branch and then run the following commands:
 
 ***MongoDB must be installed for test to run*
 
