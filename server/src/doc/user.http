@@ -2,13 +2,13 @@ POST http://localhost:3000/api/user/signup
 Content-Type: application/json
 
 {
-    "name":"luffy",
-    "email":"luffy@strawhat.com",
+    "name":"Admin",
+    "email":"admin@xyz.com",
     "password":"Admin@123",
-    "dob":"2021-09-21",
-    "phone":"01844723145",
+    "dob":"2022-01-01",
+    "phone":"012345678910",
     "gender":"Male",
-    "address":"GrandLine, Dressrossa"
+    "address":"23/A, CA"
 }
 
 ###
@@ -16,7 +16,7 @@ POST http://localhost:3000/api/user/login
 Content-Type: application/json
 
 {
-    "email":"luffy@strawhat.com",
+    "email":"admin@xyz.com",
     "password":"Admin@123"    
 }
 

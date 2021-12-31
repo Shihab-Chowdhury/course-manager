@@ -6,8 +6,8 @@ export const appconfig = {
 
 //  database configurations 
 export const dbconfig = {
-    mongo_username: 'db-admin',
-    mongo_password: 'dOntl3t#n11n',
+    // mongo_username: 'db-admin',
+    // mongo_password: 'dOntl3t#n11n',
     mongodb_port: 27017,
     mongo_host_ip: 'localhost',
     mongodb_name: 'course-manager-db',

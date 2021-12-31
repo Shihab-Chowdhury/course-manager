@@ -11,7 +11,37 @@ To run from the main branch follow the following steps:
 
 For testing purpose you have to use the testing branch and the run the following commands:
 
+***MongoDB must be installed for test to run*
+
 1. >git checkout test
 
+2. >cd server
+
+2. >npm install
+
 2. >npm test
+
+<br>
+
+```
+Please register as a new user to be able to login OR Use the following credentials
+```
+
+*Email*
+>admin@xyz.com
+
+*Password*
+>Admin@123
+
+<br>
+
+Here, some of the use cases include:
+
+1. Return the list of students, optionally with pagination
+2. Display the list of students
+3. Upon click on the list item, display the selected courses for that specific student
+4. Also, add the option to choose some courses for that student
+5. There is also the option to remove courses
+6. New user can be created
+7. User has to login to get access
 
