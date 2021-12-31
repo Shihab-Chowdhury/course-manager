@@ -1,6 +1,8 @@
 # course-manager
 An application for an Admin in a University to manually choose courses for students.
 
+*There are 4 branch ( main, dev, test and docker)*
+
 To run from the main branch follow the following steps:
 
 1. >docker build -t "vue-app" ./client/
