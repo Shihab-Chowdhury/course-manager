@@ -46,4 +46,3 @@ Here, some of the use cases include:
 5. There is also the option to remove courses
 6. New user can be created
 7. User has to login to get access
-
