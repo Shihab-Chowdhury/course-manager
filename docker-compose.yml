@@ -1,0 +1,31 @@
+version: "3"
+services:
+  vue-app:
+    image: vue-app
+    stdin_open: true
+    ports: 
+      - "8080:8080"
+    networks:
+      - course-manager
+  server-app:
+    image: server-app
+    ports:
+      - "3000:3000"
+    networks:
+      - course-manager
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3.6.19-xenial
+    ports:
+      - "27017:27017"
+    networks:
+      - course-manager
+    volumes:
+      - mongo-data:/data/db
+networks:
+  course-manager:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local

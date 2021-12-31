@@ -12,7 +12,7 @@
       <router-link to="/student-list" @click="backToDetails" class="border bg-purple-400 py-3 px-8 rounded text-white">Back to list</router-link>
       </div>
       </div>
-      <!--syudent info-->
+      <!--student info-->
       <div class="bg-white shadow overflow-hidden sm:rounded-lg">
         <div class="px-4 py-5 sm:px-6">
           <h3 class="text-lg leading-6 font-medium text-gray-900 text-left">

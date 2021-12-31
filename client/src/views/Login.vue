@@ -2,12 +2,14 @@
 <template>
   <div class="">
     <section class="flex flex-col md:flex-row h-screen justify-center mb-16 border border-purple-100">
+     
       <!-- Body Starts -->
       <div class=" bg-white flex px-4 mt-10" >
         <div class="md:max-w-md md:mx-auto w-full flex">
           <div class="w-full mt-5 ">
           
             <h1 class="text-xl md:text-3xl font-bold leading-tight mt-2 text-left text-gray-700 mb-20">Log in to your account</h1>
+            
                <!-- Login form starts -->
             <form  @submit.prevent="submitForm">
 
@@ -44,6 +46,7 @@
                     <small class="text-red-600">{{this.err}}</small>
                   </div>
                 </div>
+                <!-- Button for creating new account -->
                 
                 <hr>
 
@@ -53,8 +56,9 @@
                     <router-link to="/register" class="text-purple-500 text-sm hover:text-purple-700 font-semibold">Create an account</router-link>
                   <!-- <router-link to="/" class="hover:text-indigo-800 text-blue-700" > Sign In Instead </router-link> -->
                 </div>
+
             </form>
-               <!-- Register form  ends -->
+               <!-- Login form  ends -->
 
           </div>
         </div>
