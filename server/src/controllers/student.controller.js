@@ -87,21 +87,6 @@ export const getStudents = async (req, res, next) => {
 // Add course for the student
 export const addCourse = async (req, res, next) => {
     try {
-
-        // console.log(req.body.courses[0]);
-        let {code} = req.body.courses[0];
-        console.log(code);
-        code = code.trim();
-        
-        const checkDuplicate = await model.exists({
-            $or:[
-                {code}
-            ]
-        });
-        if (checkDuplicate) {
-            res.status(409);
-            throw new Error(`Course has already been taken please choose another course`);
-        }
         
         const { id } = req.params;
         const { courses } = req.body;
