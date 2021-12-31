@@ -33,3 +33,10 @@ Please register as a new user to be able to login OR Use the following credentia
 *Password*
 >Admin@123
 
+Here, some of the use cases include:
+
+1. Return the list of students, optionally with pagination
+2. Display the list of students
+3. Upon click on the list item, display the selected courses for that specific student
+4. Also, add the option to choose some courses for that student
+
