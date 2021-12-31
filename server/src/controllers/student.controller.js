@@ -87,6 +87,7 @@ export const getStudents = async (req, res, next) => {
 // Add course for the student
 export const addCourse = async (req, res, next) => {
     try {
+        
         const { id } = req.params;
         const { courses } = req.body;
         const add = await model.find({ _id: id, courses: { $in : courses}})   

@@ -1,6 +1,8 @@
 # course-manager
 An application for an Admin in a University to manually choose courses for students.
 
+*There are 4 branch ( main, dev, test and docker)*
+
 To run from the main branch follow the following steps:
 
 1. >docker build -t "vue-app" ./client/
@@ -41,7 +43,13 @@ Here, some of the use cases include:
 2. Display the list of students
 3. Upon click on the list item, display the selected courses for that specific student
 4. Also, add the option to choose some courses for that student
+<<<<<<< HEAD
 5. There is also the option to remove courses
 6. New user can be created
 7. User has to login to get access
+=======
+5. Can remove courses for that student
+6. Register new user
+7. User login to gain access
+>>>>>>> main
 
