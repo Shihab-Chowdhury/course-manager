@@ -39,4 +39,7 @@ Here, some of the use cases include:
 2. Display the list of students
 3. Upon click on the list item, display the selected courses for that specific student
 4. Also, add the option to choose some courses for that student
+5. Can remove courses for that student
+6. Register new user
+7. User login to gain access
 
