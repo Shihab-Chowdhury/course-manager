@@ -26,7 +26,7 @@ For testing purpose you have to use the testing branch and then run the followin
 <br>
 
 
-**Please register as a new user to be able to login OR Use the following credentials**
+**Please register as a new user to be able to login oR Use the following credentials**
 
 
 *Email*
