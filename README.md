@@ -25,16 +25,18 @@ For testing purpose you have to use the testing branch and then run the followin
 
 <br>
 
-```
-Please register as a new user to be able to login OR Use the following credentials
-```
+
+**Please register as a new user to be able to login OR Use the following credentials**
+
 
 *Email*
->admin@xyz.com
-
+```
+admin@xyz.com
+```
 *Password*
->Admin@123
-
+```
+Admin@123
+```
 <br>
 
 Here, some of the use cases include:
@@ -46,3 +48,8 @@ Here, some of the use cases include:
 5. There is also the option to remove courses
 6. New user can be created
 7. User has to login to get access
+
+The application will be running on: 
+```
+localhost:8080
+```
