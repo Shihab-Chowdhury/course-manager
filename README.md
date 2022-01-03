@@ -25,16 +25,18 @@ For testing purpose you have to use the testing branch and then run the followin
 
 <br>
 
-```
-Please register as a new user to be able to login OR Use the following credentials
-```
+
+**Please register as a new user to be able to login OR Use the following credentials**
+
 
 *Email*
->admin@xyz.com
-
+```
+admin@xyz.com
+```
 *Password*
->Admin@123
-
+```
+Admin@123
+```
 <br>
 
 Here, some of the use cases include:
