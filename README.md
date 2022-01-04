@@ -3,7 +3,7 @@ An application for an Admin in a University to manually choose courses for stude
 
 *There are 4 branch ( main, dev, test and docker)*
 
-To run the application (main branch) please use the following commands:
+To run the application (main branch) please use the following commands after cloning the repository:
 
 1. >docker build -t "vue-app" ./client/
 
